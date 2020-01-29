@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="/css/materialize.css">
+<title>Empresa</title>
+</head>
+<body >
+	<header>
+		<nav>
+		    <div class="nav-wrapper">
+		      <a href="/"><img style="max-width:90px; max-height:70px; margin: 5px;" src="/img/empresa.png"></a>	
+		      <a href="/" class="brand-logo">Empresa App</a>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		        <li><a href="http://localhost:8080/funcionariolista">Funcionarios</a></li>
+		        <li><a href="http://localhost:8080/departamentolista">Departamentos</a></li>
+		      </ul>
+		    </div>
+  		</nav>
+	</header>
+	 <section>
+		<h1>Lista de Subordinados</h1>	
+		<table th:each="sub : ${subordinados}">
+			<tr>
+				<td class="titulo2" >Matrícula</td>
+				<td class="titulo2" >Nome</td>
+				<td class="titulo2" >Salário</td>	
+			</tr>
+			
+			<tr   >
+				<td class="titulo" th:text="${sub.matricula}"> </td>
+				<td class="titulo"  th:text="${sub.nome}"> </td>
+				<td class="titulo" th:text="${sub.salario}"> </td>
+			</tr>
+			
+			</table>
+			
+	</section>	
+</body>
+</html>

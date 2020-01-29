@@ -1,0 +1,67 @@
+
+label, p{
+	font-family: "Courier New";
+	font-size: 20px;
+	color: #7FFF00;
+}
+
+div{
+	text-align: center;
+}
+
+input{
+	border-radius: 20px;
+	height: 30px;
+	width: 30%;
+	text-orientation: center;
+	text-align: center;
+}
+
+button{
+	border-radius: 30px;
+	height: 50px;
+	width: 200px;
+	background: #7FFF00;
+	font-family: "Arial Black";
+	
+	font-size: 30px;
+	color: #6959CD;
+}
+
+body{
+	background-color:  #6959CD;
+}
+
+h1{
+	text-align: center;
+	color: #7FFF00;
+	font-family: "Arial Black";
+	
+	font-size: 60px;
+}
+
+textarea{
+	border: solid 2px;
+	border-color: #7FFF00;
+	color: #6959CD;
+	font-size: 16px;
+	padding: 3px;
+
+}
+.texto, #s{
+	width: 600px;
+	height: 100px;
+	border-radius: 20px;
+	text-orientation: center;
+	text-align: center;
+}
+
+#geral{
+	width: 100%;
+	display: flex;
+}
+
+.meio{
+	width: 50%;
+}
+

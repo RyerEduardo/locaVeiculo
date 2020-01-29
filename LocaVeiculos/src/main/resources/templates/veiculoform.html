@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>LocaVeículos</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/materialize.css">
+
+</head>
+<body>
+	<header>
+		<nav>
+		    <div class="nav-wrapper">
+		      <a href="/"><img style="max-width:90px; max-height:70px; margin: 5px;" src="/img/fox.png"></a>	
+		      <a href="/" class="brand-logo">LocaVeículos</a>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		        <li><a href="veiculolista">Veículos</a></li>
+		   
+		      </ul>
+		    </div>
+  		</nav>
+	</header>
+
+	<section class="section2" >
+	<form th:action="@{/veiculo}" th:object="${veiculo}" method="post">
+		
+		Modelo: <input type="text" th:field="*{modelo}"> <br>
+		Placa: <input type="text" th:field="*{placa}"> <br>
+		Ano: <input type="text" th:field="*{ano}"> <br>
+		
+		<label class="selectlabel" >ESTADO</label>
+		<select  class="select" name="estado"  >
+		
+ 			<option th:field="*{estado}"    
+ 			th:value="Disponível" th:text="Disponível"
+ 			 
+ 			></option>
+ 			
+ 			<option  th:field="*{estado}"   
+ 			th:value="Manutenção" th:text="Manutenção"
+ 			></option>
+ 				
+		</select>
+		
+
+		<input class="waves-effect waves-light btn" type="submit" value="Salvar">
+		
+	</form>
+	  
+			
+	</section>
+</body>
+</html>

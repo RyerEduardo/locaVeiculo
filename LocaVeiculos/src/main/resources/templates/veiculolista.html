@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>LocaVeículos</title>
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/materialize.css">
+</head>
+<body>
+	<header>
+		<nav>
+		    <div class="nav-wrapper">
+		      <a href="/"><img style="max-width:90px; max-height:70px; margin: 5px;" src="/img/fox.png"></a>	
+		      <a href="/" class="brand-logo">LocaVeículos</a>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		        
+		        <li><a href="reservalista"> Reservas</a></li> 
+		      </ul>
+		    </div>
+  		</nav>
+	</header>
+	<div class="submenu">
+	
+		<a  th:href="@{/veiculo}" class="waves-effect waves-light btn"> Novo Veiculo</a>
+		
+		
+	</div>
+	<section  >
+		<h1>Lista de veiculos</h1>
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>Modelo</th>
+				<th>Placa</th>
+				<th>Ano</th>
+				<th>Estado</th>
+			</tr>
+			<tr th:each="veiculo : ${lista}" >
+				<td th:text="${veiculo.id}"></td>
+				<td th:text="${veiculo.modelo}"></td>
+				<td th:text="${veiculo.placa}"></td>
+				<td th:text="${veiculo.ano}"></td>
+				<td th:text="${veiculo.estado}"></td>
+				<td><a th:href="@{'/veiculo/' + ${veiculo.id} + '/del'}">
+					<img th:src="@{/img/2.png}" style="width: 30px">
+				</a></td>
+				<td><a th:href="@{'/veiculo/' + ${veiculo.id} + '/edit'}">
+					<img th:src="@{/img/1.png}" style="width: 30px">
+				</a></td>
+			</tr>
+			
+		</table>
+		
+		
+		
+	</section>
+</body>
+</html>

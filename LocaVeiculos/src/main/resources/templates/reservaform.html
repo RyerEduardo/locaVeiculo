@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="/css/materialize.css">
+<title>LocaVeículos</title>
+</head>
+<body>
+	<header>
+		<nav>
+		    <div class="nav-wrapper">
+		      <a href="/"><img style="max-width:90px; max-height:70px; margin: 5px;" src="/img/fox.png"></a>	
+		      <a href="/" class="brand-logo">LocaVeículos</a>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		        
+		        <li><a href="reservalista">reservas</a></li>
+		      </ul>
+		    </div>
+  		</nav>
+	</header>
+	<section class="section2" >
+		<form th:action="@{/reserva}" th:object="${reserva}" method="post">
+			id: <input type="number" th:field="*{id}" th:readonly="${edit}"/> <br>
+			Nome: <input type="text" th:field="*{nome}"> <br>
+			
+			
+			<label >Gerente</label>
+			<select name="veiculo"  >
+	 			<option   th:each="veiculo : ${veiculo}"   
+	 			th:value="${veiculo.matricula}" th:text="${veiculo.nome}"
+	 			
+	 			></option>
+	  			
+			</select>
+			<input class="waves-effect waves-light btn" type="submit" value="Salvar">
+			
+		</form>
+		
+	</section>
+</body>
+</html>

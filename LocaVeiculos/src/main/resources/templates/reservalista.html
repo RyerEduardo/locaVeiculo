@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>LocaVeículos</title>
+<link rel="stylesheet" type="text/css" href="/css/materialize.css">
+</head>
+<body>
+	<header>
+		<nav>
+		    <div class="nav-wrapper">
+		      <a href="/"><img style="max-width:90px; max-height:70px; margin: 5px;" src="/img/fox.png"></a>	
+		      <a href="/" class="brand-logo">LocaVeículos</a>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		        <li><a href="veiculolista">Veiculos</a></li>
+		   
+		      </ul>
+		    </div>
+  		</nav>
+	</header>
+	<div class="submenu">
+	
+		<a  th:href="@{/reserva}" class="waves-effect waves-light btn"> Nova Reserva</a>
+		
+		
+	</div>
+	<section  >
+		<h1>Lista de reservas</h1>
+		<table>
+			<tr>
+				<th>Id</th>
+				<th>Data inicio</th>
+				<th>Data fim</th>
+				<th>Estado</th>
+				
+			</tr>
+			<tr th:each="reserva : ${lista}">
+				<td th:text="${reserva.id}"></td>
+				<td th:text="${reserva.dataInicio}"></td>
+				<td th:text="${reserva.dataFim}"></td>
+				<td th:text="${reserva.veiculo.modelo != null ? reserva.veiculo.modelo:''}"> </td>
+				<td><a th:href="@{'/reserva/' + ${reserva.id} + '/del'}">
+					<img th:src="@{/img/2.png}" style="width: 30px">
+				</a></td>
+				<td><a th:href="@{'/reserva/' + ${reserva.id} + '/edit'}">
+					<img th:src="@{/img/1.png}" style="width: 30px">
+				</a></td>
+				<td>
+					<a  th:href="@{'/subs/' + ${reserva.id}}"
+					 class="waves-effect waves-light btn" 
+					 >Subordinados</a>
+				</td>
+			</tr>
+			
+		</table>
+		
+	</section>
+</body>
+</html>
