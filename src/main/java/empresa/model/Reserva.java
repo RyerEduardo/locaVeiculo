@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -27,7 +27,7 @@ public class Reserva {
 	@Column(length = 40)
 	private String estado;
 	
-	@OneToOne
+	@ManyToOne
 	Veiculo veiculo; 
 	
 	public Integer getId() {

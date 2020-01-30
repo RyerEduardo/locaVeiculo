@@ -17,52 +17,37 @@ public class VeiculoController {
 		@Autowired
 		private VeiculoRepository repo;
 		
-		@Autowired
-		private ReservaRepository repod;
 		
 		
 		@GetMapping("/veiculolista")
 		public String exibirVeiculo(Model model) {
-			model.addAttribute("reservas", repod.findAll());
 			model.addAttribute("lista", repo.findAll());
 			return "veiculolista";
 		}
 		
 		
 		
-		@GetMapping("/subs/{id}")
-		public String exibirSubordinados(@PathVariable Integer id, Model model) {
-			model.addAttribute("reservas", repod.getOne(id));
-			model.addAttribute("subordinados", repo.findByGerente(id));
-			
-			return "listasubordinados";
-		}
-		
 		@GetMapping("/veiculo")
 		public String exibirFormulario(Model model) {
 			model.addAttribute("veiculo", new Veiculo());
-			model.addAttribute("reserva", repod.findAll());
 			return "veiculoform";
 		}
 		
 		@PostMapping("/veiculo")
 		public String salvar(@ModelAttribute Veiculo veiculo) {
 			repo.save(veiculo);
-			
 			return "redirect:/veiculolista";
 		}
 		
 		@GetMapping("/veiculo/{id}/del")
 		public String excluir(@PathVariable Integer id) {
 			repo.deleteById(id);
-			
 			return "redirect:/veiculolista";
 		}
 		
 		@GetMapping("/veiculo/{id}/edit")
 		public String alterar(@PathVariable Integer id, Model model) {
 			Veiculo veiculo = repo.findById(id).orElse(null);
-			model.addAttribute("reserva", repod.findAll());
 			model.addAttribute("veiculo", veiculo);
 			model.addAttribute("edit", true);
 			return "veiculoform";

@@ -20,14 +20,14 @@
 	</header>
 	<section class="section2" >
 		<form th:action="@{/reserva}" th:object="${reserva}" method="post">
-			id: <input type="number" th:field="*{id}" th:readonly="${edit}"/> <br>
-			Nome: <input type="text" th:field="*{nome}"> <br>
+			Inicio da reserva: <input type="text" th:field="*{dataInicio}" placeholder="Ex: 10/10/2010"> <br>
+			Fim da reserva: <input type="text" th:field="*{dataFim}" placeholder="Ex: 15/10/2010"> <br>
 			
 			
-			<label >Gerente</label>
+			<label >Veículos Disponíveis</label>
 			<select name="veiculo"  >
 	 			<option   th:each="veiculo : ${veiculo}"   
-	 			th:value="${veiculo.matricula}" th:text="${veiculo.nome}"
+	 			th:value="${veiculo.id}" th:text="${veiculo.modelo}"
 	 			
 	 			></option>
 	  			

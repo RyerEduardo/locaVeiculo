@@ -32,8 +32,7 @@ public class Veiculo {
 	private String estado;
 	
 	
-	@ManyToOne
-    private Reserva reserva;
+
 	
 	
 	public Integer getId() {
@@ -65,12 +64,6 @@ public class Veiculo {
 	}
 	public void setEstado(String estado) {
 		this.estado = estado;
-	}
-	public Reserva getReserva() {
-		return reserva;
-	}
-	public void setReserva(Reserva reserva) {
-		this.reserva = reserva;
 	}
 	
 	

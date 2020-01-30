@@ -23,7 +23,7 @@
 
 	<section class="section2" >
 	<form th:action="@{/veiculo}" th:object="${veiculo}" method="post">
-		
+		ID: <input type="text"  th:field="*{id}" readOnly = "true"> <br>
 		Modelo: <input type="text" th:field="*{modelo}"> <br>
 		Placa: <input type="text" th:field="*{placa}"> <br>
 		Ano: <input type="text" th:field="*{ano}"> <br>
@@ -44,6 +44,7 @@
 		
 
 		<input class="waves-effect waves-light btn" type="submit" value="Salvar">
+		<a class="waves-effect waves-light btn" href="/" >Cancelar</a>
 		
 	</form>
 	  

@@ -26,11 +26,7 @@ public class ReservaController {
 			return "home";
 		}
 		
-		@GetMapping("/subordinados")
-		public String exibirSubordinados( Model model) {
-			model.addAttribute("reservas", repod.findAll());
-			return "listasubordinados";
-		}
+		
 		
 		@GetMapping("/reservalista")
 		public String exibirDepartamento(Model modeld) {
