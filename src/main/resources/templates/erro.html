@@ -19,16 +19,8 @@
   		</nav>
 	</header>
 	<section class="section2" >
-		<form th:action="@{/verifica}" th:object="${temp}" method="post">
-			Inicio da reserva: <input type="datetime-local" th:field="*{dataInicio}" > <br>
-			Fim da reserva: <input type="datetime-local" th:field="*{dataFim}" > <br>
-			
-			
-			<input class="waves-effect waves-light btn" type="submit" value="Verificar veículos disponiveis">
-			
-			
-		</form>
-		
+	<h3>Preencha os campos de data e hora corretamente!</h3>
+	<a class="waves-effect waves-light btn" href="/reserva" >Voltar</a>
 	</section>
 </body>
 </html>

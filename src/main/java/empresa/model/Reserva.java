@@ -1,6 +1,8 @@
 package empresa.model;
 
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,10 +21,10 @@ public class Reserva {
 	private Integer id;
 	
 	@Column(length = 40)
-	private String dataInicio;
+	private Date dataInicio;
 	
 	@Column(length = 40)
-	private String dataFim;
+	private  Date dataFim;
 	
 	@Column(length = 40)
 	private String estado;
@@ -36,16 +38,18 @@ public class Reserva {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getDataInicio() {
+	
+	
+	public Date getDataInicio() {
 		return dataInicio;
 	}
-	public void setDataInicio(String dataInicio) {
+	public void setDataInicio(Date dataInicio) {
 		this.dataInicio = dataInicio;
 	}
-	public String getDataFim() {
+	public Date getDataFim() {
 		return dataFim;
 	}
-	public void setDataFim(String dataFim) {
+	public void setDataFim(Date dataFim) {
 		this.dataFim = dataFim;
 	}
 	public String getEstado() {

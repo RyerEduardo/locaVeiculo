@@ -19,13 +19,21 @@
   		</nav>
 	</header>
 	<section class="section2" >
-		<form th:action="@{/verifica}" th:object="${temp}" method="post">
-			Inicio da reserva: <input type="datetime-local" th:field="*{dataInicio}" > <br>
-			Fim da reserva: <input type="datetime-local" th:field="*{dataFim}" > <br>
+		<form th:action="@{/reserva}" th:object="${reserva}" method="post">
+			Inicio da reserva: <input type="text" th:field="*{dataInicio}" readOnly = "true"> <br>
+			Fim da reserva: <input type="text" th:field="*{dataFim}" readOnly = "true"> <br>
 			
 			
-			<input class="waves-effect waves-light btn" type="submit" value="Verificar veículos disponiveis">
-			
+			<label >Veículos Disponíveis</label>
+			<select name="veiculo"  >
+	 			<option   th:each="veiculo : ${veiculosdisponiveis}"   
+	 			th:value="${veiculo.id}" th:text="${veiculo.modelo}"
+	 			
+	 			></option>
+	  			
+			</select>
+			<input class="waves-effect waves-light btn" type="submit" value="Confirmar reserva">
+			<a class="waves-effect waves-light btn" href="/reserva" >Cancelar</a>
 			
 		</form>
 		
