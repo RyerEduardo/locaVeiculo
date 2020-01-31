@@ -29,8 +29,9 @@
 		<table>
 			<tr>
 				<th>Id</th>
-				<th>Data inicio</th>
-				<th>Data fim</th>
+				<th>Data / Hora Inicio</th>
+				<th>Data / Hora Fim</th>
+				<th>Estado</th>
 				<th>Veiculo</th>
 				<th>Placa</th>
 			</tr>
@@ -38,14 +39,13 @@
 				<td th:text="${reserva.id}"></td>
 				<td th:text="${reserva.dataInicio}"></td>
 				<td th:text="${reserva.dataFim}"></td>
+				<td th:text="${reserva.estado}"></td>
 				<td th:text="${reserva.veiculo.modelo != null ? reserva.veiculo.modelo:''}"> </td>
 				<td th:text="${reserva.veiculo.placa != null ? reserva.veiculo.placa:''}"> </td>
 				<td><a th:href="@{'/reserva/' + ${reserva.id} + '/del'}">
 					<img th:src="@{/img/2.png}" style="width: 30px">
 				</a></td>
-				<td><a th:href="@{'/reserva/' + ${reserva.id} + '/edit'}">
-					<img th:src="@{/img/1.png}" style="width: 30px">
-				</a></td>
+				
 				
 			</tr>
 			

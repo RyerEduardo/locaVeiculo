@@ -59,7 +59,7 @@ public class ReservaController {
 	    
 	    public Date convertData(String data) throws ParseException {
 			
-	    	DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+	    	DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
 	    	Date d = (Date)formatter.parse(data);
             
             return d;
@@ -67,7 +67,7 @@ public class ReservaController {
 		
 		public boolean validaData(String data1, String data2) {
 			
-			DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");//formata a data
+			DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");//formata a data
             boolean erro = false;
             
             try{
@@ -141,14 +141,7 @@ public class ReservaController {
 			
 		}
 		
-		@GetMapping("/reserva/{id}/edit")
-		public String alterar(@PathVariable Integer id, Model modeld) {
-			Reserva reserva = repod.findById(id).orElse(null);
-			modeld.addAttribute("veiculo", repo.findAll());
-			modeld.addAttribute("reserva", reserva);
-			modeld.addAttribute("edit", true);
-			return "reservaform";
-		}
+	
 
 		
 		

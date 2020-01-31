@@ -19,7 +19,9 @@
   		</nav>
 	</header>
 	<section class="section2" >
+	<h3>Confirmação da reserva</h3>
 		<form th:action="@{/reserva}" th:object="${reserva}" method="post">
+			
 			Inicio da reserva: <input type="text" th:field="*{dataInicio}" readOnly = "true"> <br>
 			Fim da reserva: <input type="text" th:field="*{dataFim}" readOnly = "true"> <br>
 			
@@ -27,11 +29,29 @@
 			<label >Veículos Disponíveis</label>
 			<select name="veiculo"  >
 	 			<option   th:each="veiculo : ${veiculosdisponiveis}"   
-	 			th:value="${veiculo.id}" th:text="${veiculo.modelo}"
+	 			th:value="${veiculo.id}" th:text=" 'MODELO: ' + ${veiculo.modelo} + ' PLACA: ' + ${veiculo.placa}"
 	 			
 	 			></option>
 	  			
 			</select>
+			
+		<label class="selectlabel" >Estado da Reserva</label>
+		  <select  class="select" name="estado"  >
+		
+ 			<option th:field="*{estado}"    
+ 			th:value="Provisótia" th:text="Provisótia"
+ 			 
+ 			></option>
+ 			
+ 			<option  th:field="*{estado}"   
+ 			th:value="Confirmada" th:text="Confirmada"
+ 			></option>
+ 			
+ 			<option  th:field="*{estado}"   
+ 			th:value="Cancelada" th:text="Cancelada"
+ 			></option>
+ 				
+		</select>
 			<input class="waves-effect waves-light btn" type="submit" value="Confirmar reserva">
 			<a class="waves-effect waves-light btn" href="/reserva" >Cancelar</a>
 			

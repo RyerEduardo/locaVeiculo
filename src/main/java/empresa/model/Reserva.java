@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 public class Reserva {
 
@@ -20,10 +22,10 @@ public class Reserva {
     @Column(name = "id", nullable = false, unique = true)
 	private Integer id;
 	
-	@Column(length = 40)
+	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
 	private Date dataInicio;
 	
-	@Column(length = 40)
+	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
 	private  Date dataFim;
 	
 	@Column(length = 40)

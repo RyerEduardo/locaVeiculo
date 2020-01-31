@@ -22,6 +22,7 @@
 	</header>
 
 	<section class="section2" >
+	<h3>Cadastro de veículo</h3>
 	<form th:action="@{/veiculo}" th:object="${veiculo}" method="post">
 		ID: <input type="text"  th:field="*{id}" readOnly = "true"> <br>
 		Modelo: <input type="text" th:field="*{modelo}"> <br>

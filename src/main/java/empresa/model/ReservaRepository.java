@@ -8,6 +8,5 @@ import org.springframework.data.jpa.repository.Query;
 
 
 public interface ReservaRepository extends JpaRepository<Reserva, Integer> {
-	@Query(value = "SELECT * FROM reserva WHERE reserva.dataInicio :dataInicio OR reserva.dataFim :dataFim", nativeQuery = true)
-	List <Reserva> reservaEntre(String dataInicio, String dataFim);
+
 }

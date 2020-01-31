@@ -19,13 +19,14 @@
   		</nav>
 	</header>
 	<section class="section2" >
+	<h3>Cadastro de reserva</h3>
 		<form th:action="@{/verifica}" th:object="${temp}" method="post">
 			Inicio da reserva: <input type="datetime-local" th:field="*{dataInicio}" > <br>
 			Fim da reserva: <input type="datetime-local" th:field="*{dataFim}" > <br>
 			
 			
 			<input class="waves-effect waves-light btn" type="submit" value="Verificar veículos disponiveis">
-			
+			<a class="waves-effect waves-light btn" href="/" >Voltar</a>
 			
 		</form>
 		

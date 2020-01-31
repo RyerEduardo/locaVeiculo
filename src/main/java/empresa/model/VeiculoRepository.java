@@ -10,8 +10,5 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface VeiculoRepository extends JpaRepository<Veiculo, Integer> {
 	
-	@Query(value = "SELECT * FROM veiculo WHERE veiculo.departamento_id = :id AND veiculo.id != :id", nativeQuery = true)
-	List <Veiculo> findByGerente(Integer id);
-	
 }
 
